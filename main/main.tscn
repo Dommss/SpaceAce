@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://rbwayv2emc6"]
+[gd_scene load_steps=12 format=3 uid="uid://rbwayv2emc6"]
 
 [ext_resource type="Texture2D" uid="uid://crxxs7hffe4kc" path="res://assets/backgrounds/GalaxyUno.png" id="1_08m7q"]
+[ext_resource type="Script" path="res://main/main.gd" id="1_tic0u"]
 [ext_resource type="Texture2D" uid="uid://bmjmpwdhi862y" path="res://assets/backgrounds/spr_stars01.png" id="2_cm4cq"]
 [ext_resource type="Texture2D" uid="uid://b68jvmcb8o8d3" path="res://assets/backgrounds/spr_stars02.png" id="3_4gwwx"]
 [ext_resource type="FontFile" uid="uid://dj82vxk1m875e" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="4_n7gnf"]
@@ -18,6 +19,7 @@ outline_size = 12
 outline_color = Color(0.192157, 0, 0.937255, 1)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_tic0u")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -110,3 +112,5 @@ vertical_alignment = 1
 
 [node name="Sun" parent="." instance=ExtResource("9_8vgg7")]
 offset = Vector2(24, 24)
+
+[connection signal="pressed" from="CanvasLayer/MC/VB/PlayButton" to="." method="_on_play_button_pressed"]
