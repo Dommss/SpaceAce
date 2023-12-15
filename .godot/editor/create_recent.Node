@@ -1,0 +1,7 @@
+CollisionShape2D
+AnimationPlayer
+Sprite2D
+Area2D
+ParallaxLayer
+ColorRect
+ParallaxBackground

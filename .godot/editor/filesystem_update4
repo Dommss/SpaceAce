@@ -3,3 +3,7 @@ res://level/level.gd
 res://singletons/game_manager.gd
 res://level/level.tscn
 res://main/main.gd
+res://level_bg/level_bg.tscn
+res://level_bg/level_bg.gd
+res://player/player.tscn
+res://player/player.gd
