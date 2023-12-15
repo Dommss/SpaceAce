@@ -7,3 +7,5 @@ res://level_bg/level_bg.tscn
 res://level_bg/level_bg.gd
 res://player/player.tscn
 res://player/player.gd
+res://singletons/game_data.gd
+res://singletons/sound_manager.gd
