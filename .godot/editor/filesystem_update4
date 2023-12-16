@@ -3,3 +3,6 @@ res://explosion/explosion.tscn
 res://explosion/explosion.gd
 res://singletons/object_maker.gd
 res://level/level.gd
+res://boom/boom.tscn
+res://boom/boom.gd
+res://level/level.tscn
