@@ -7,3 +7,5 @@ res://enemies/enemy_bomber.tscn
 res://enemies/enemy_bio.tscn
 res://level/level.tscn
 res://boom/boom.tscn
+res://wave_manager/wave_manager.tscn
+res://wave_manager/wave_manager.gd

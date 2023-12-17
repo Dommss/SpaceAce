@@ -1,7 +1,8 @@
+Timer
+Path2D
 Node2D
 Area2D
 VisibleOnScreenNotifier2D
-Timer
 AnimatedSprite2D
 PathFollow2D
 AudioStreamPlayer2D

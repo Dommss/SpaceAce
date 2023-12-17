@@ -11,13 +11,14 @@ var player_ref: Player
 var speed: float = 0.0
 var can_shoot: bool = false
 var dead: bool = false
+var anim_string: String
 
 
 func _ready():
 	player_ref = get_tree().get_first_node_in_group(GameData.GROUP_PLAYER)
 	if !player_ref:
 		queue_free()
-	animated_sprite_2d.play()
+	animated_sprite_2d.play(anim_string)
 
 func _process(delta):
 	progress_ratio += speed * delta
@@ -28,7 +29,7 @@ func _process(delta):
 
 func setup(speed: float, anim_name: String) -> void:
 	self.speed = speed
-	animated_sprite_2d.animation = anim_name
+	anim_string = anim_name
 
 
 func _on_laser_timer_timeout():
