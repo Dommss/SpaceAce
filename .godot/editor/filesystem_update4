@@ -14,3 +14,4 @@ res://bullets/base_bullet.gd
 res://bullets/player_bullet.tscn
 res://bullets/enemy_bullet.tscn
 res://bullets/enemy_bomb.tscn
+res://player/player.gd

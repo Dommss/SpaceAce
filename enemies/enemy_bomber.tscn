@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg3xf11dfimy5"]
+[gd_scene load_steps=3 format=3 uid="uid://dg3xf11dfimy5"]
 
 [ext_resource type="PackedScene" uid="uid://b2lvrv8nj2xa6" path="res://enemies/enemy_basic.tscn" id="1_ayx5y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vfdai"]
+radius = 19.0
+height = 46.0
 
 [node name="EnemyBomber" instance=ExtResource("1_ayx5y")]
 shoots = true
@@ -8,3 +12,7 @@ aims_at_player = true
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 animation = &"bomber_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_vfdai")
