@@ -1,8 +1,9 @@
-res://level_bg/level_bg.gd
-res://explosion/explosion.tscn
-res://explosion/explosion.gd
-res://singletons/object_maker.gd
-res://level/level.gd
-res://boom/boom.tscn
-res://boom/boom.gd
+res://enemies/enemy_basic.tscn
+res://enemies/enemy_basic.gd
+res://singletons/game_data.gd
+res://player/player.tscn
+res://enemies/enemy_zipper.tscn
+res://enemies/enemy_bomber.tscn
+res://enemies/enemy_bio.tscn
 res://level/level.tscn
+res://boom/boom.tscn

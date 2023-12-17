@@ -1,9 +1,13 @@
-AudioStreamPlayer2D
+Node2D
+Area2D
+VisibleOnScreenNotifier2D
+Timer
 AnimatedSprite2D
+PathFollow2D
+AudioStreamPlayer2D
 AnimationPlayer
 Sprite2D
 CollisionShape2D
-Area2D
 ParallaxLayer
 ColorRect
 ParallaxBackground
