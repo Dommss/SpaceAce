@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://csss482e7p05f"]
+
+[ext_resource type="PackedScene" uid="uid://rv53fmsosxmq" path="res://bullets/base_bullet.tscn" id="1_wv3pl"]
+[ext_resource type="Texture2D" uid="uid://3u10tuvfiqw8" path="res://assets/lasers/laserRed03.png" id="2_mol1a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o3sk1"]
+radius = 2.0
+height = 16.0
+
+[node name="EnemyBullet" instance=ExtResource("1_wv3pl")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mol1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CapsuleShape2D_o3sk1")

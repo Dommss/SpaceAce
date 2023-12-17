@@ -9,3 +9,8 @@ res://level/level.tscn
 res://boom/boom.tscn
 res://wave_manager/wave_manager.tscn
 res://wave_manager/wave_manager.gd
+res://bullets/base_bullet.tscn
+res://bullets/base_bullet.gd
+res://bullets/player_bullet.tscn
+res://bullets/enemy_bullet.tscn
+res://bullets/enemy_bomb.tscn
