@@ -13,3 +13,7 @@ res://bullets/enemy_bomb.tscn
 res://enemies/enemy_basic.gd
 res://level/level.tscn
 res://utils/utils.gd
+res://player/player.gd
+res://singletons/signal_manager.gd
+res://power_up/power_up.tscn
+res://power_up/power_up.gd
