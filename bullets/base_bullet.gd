@@ -21,7 +21,8 @@ func setup(pos: Vector2, dir: Vector2, sp: float, dmg: int) -> void:
 
 
 func blow_up(area: Node2D) -> void:
-	ObjectMaker.create_explosion(global_position)
+	var net_position = global_position - area.global_position
+	ObjectMaker.create_explosion(net_position, area)
 	set_process(false)
 	queue_free()
 
