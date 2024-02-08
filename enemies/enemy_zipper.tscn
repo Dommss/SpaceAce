@@ -14,3 +14,9 @@ animation = &"zipper_1"
 position = Vector2(0, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_je8qj")
+
+[node name="HealthBar" parent="." index="5"]
+offset_left = -13.0
+offset_top = -17.0
+offset_right = 13.0
+offset_bottom = -15.0

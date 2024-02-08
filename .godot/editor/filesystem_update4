@@ -17,3 +17,5 @@ res://player/player.gd
 res://singletons/signal_manager.gd
 res://power_up/power_up.tscn
 res://power_up/power_up.gd
+res://health_bar/health_bar.tscn
+res://health_bar/health_bar.gd
