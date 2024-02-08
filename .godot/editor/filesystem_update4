@@ -19,3 +19,4 @@ res://power_up/power_up.tscn
 res://power_up/power_up.gd
 res://health_bar/health_bar.tscn
 res://health_bar/health_bar.gd
+res://homing_missile/homing_missile.tscn

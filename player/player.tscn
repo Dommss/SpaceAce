@@ -66,6 +66,7 @@ _data = {
 [node name="Player" type="Area2D" groups=["player"]]
 script = ExtResource("1_myhue")
 bullet_scene = ExtResource("2_f2c63")
+shooting_delay = 0.35
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_d4hsf")
@@ -79,5 +80,10 @@ libraries = {
 "": SubResource("AnimationLibrary_2v1ok")
 }
 autoplay = "fly"
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

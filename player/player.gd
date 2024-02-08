@@ -4,12 +4,14 @@ class_name Player
 
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
+@onready var shoot_timer = $ShootTimer
 
 @export var bullet_scene: PackedScene
 @export var speed: float = 250.0
 @export var bullet_speed: float = 250.0
 @export var bullet_damage: int = 10
 @export var bullet_direction: Vector2 = Vector2.UP
+@export var shooting_delay: float = 0.5
 
 const MARGIN: float = 32.0
 
@@ -17,16 +19,18 @@ var upper_left: Vector2
 var lower_right: Vector2
 
 func _ready():
+	shoot_timer.wait_time = shooting_delay
 	set_limits()
 	SignalManager.on_powerup_hit.connect(on_powerup_hit)
 	
 func _process(delta):
+	print(shoot_timer.time_left)
 	var input = get_input()
 	
 	global_position += input * delta * speed
 	global_position = global_position.clamp(upper_left, lower_right)
 	
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") or Input.is_action_pressed("shoot"):
 		shoot()
 
 func set_limits() -> void:
@@ -54,9 +58,11 @@ func get_input() -> Vector2:
 
 
 func shoot() -> void:
-	var bullet = bullet_scene.instantiate()
-	bullet.setup(global_position, bullet_direction, bullet_speed, bullet_damage)
-	get_tree().root.add_child(bullet)
+	if shoot_timer.time_left <= 0:
+		shoot_timer.start()
+		var bullet = bullet_scene.instantiate()
+		bullet.setup(global_position, bullet_direction, bullet_speed, bullet_damage)
+		get_tree().root.add_child(bullet)
 
 func on_powerup_hit(power_up: GameData.POWERUP_TYPE) -> void:
 	print("powerup: ", power_up)
