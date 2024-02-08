@@ -10,3 +10,6 @@ res://wave_manager/wave_manager.tscn
 res://bullets/player_bullet.tscn
 res://bullets/enemy_bullet.tscn
 res://bullets/enemy_bomb.tscn
+res://enemies/enemy_basic.gd
+res://level/level.tscn
+res://utils/utils.gd
