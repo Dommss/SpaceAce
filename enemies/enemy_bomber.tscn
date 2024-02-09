@@ -14,7 +14,7 @@ bullet_scene = ExtResource("2_lwe1b")
 bullet_wait_time = 2.0
 bullet_wait_time_var = 0.2
 kill_me_score = 40
-damage_taken = 15
+damage_taken = 20
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 animation = &"bomber_1"
@@ -40,3 +40,6 @@ offset_left = -20.0
 offset_top = -34.0
 offset_right = 20.0
 offset_bottom = -32.0
+
+[node name="Sound" parent="." index="6"]
+volume_db = -12.0

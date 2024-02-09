@@ -8,7 +8,7 @@ extends PathFollow2D
 @export var bullet_direction: Vector2 = Vector2.DOWN
 @export var bullet_wait_time: float = 3.0
 @export var bullet_wait_time_var: float = 0.05
-@export var power_up_chance: float = 0.7
+@export var power_up_chance: float = 0.35
 
 @export var kill_me_score: int = 10
 @export var damage_taken: int = 10

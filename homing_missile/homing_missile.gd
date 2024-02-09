@@ -1,7 +1,7 @@
 extends Area2D
 
-const ROTATION_SPEED: float = 200.0
-const SPEED: float = 40.0
+const ROTATION_SPEED: float = 75.0
+const SPEED: float = 65.0
 const SCORE: int = 5
 
 var player_ref: Player

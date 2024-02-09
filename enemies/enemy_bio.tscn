@@ -14,7 +14,7 @@ bullet_speed = 160.0
 bullet_wait_time = 1.5
 bullet_wait_time_var = 0.1
 kill_me_score = 20
-damage_taken = 20
+damage_taken = 25
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 animation = &"biomech_1"
@@ -33,3 +33,6 @@ offset_left = -15.0
 offset_top = -19.0
 offset_right = 15.0
 offset_bottom = -17.0
+
+[node name="Sound" parent="." index="6"]
+volume_db = -12.0

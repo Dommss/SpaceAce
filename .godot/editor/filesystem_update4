@@ -24,3 +24,10 @@ res://game_over/game_over.tscn
 res://main/main.tscn
 res://main/main.gd
 res://game_over/game_over.gd
+res://wave_manager/wave_manager.tscn
+res://saucer_manager/saucer_manager.tscn
+res://saucer_manager/saucer_manager.gd
+res://shield/shield.tscn
+res://boom/boom.tscn
+res://explosion/explosion.tscn
+res://power_up/power_up.tscn

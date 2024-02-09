@@ -6,7 +6,7 @@
 height = 36.0
 
 [node name="EnemyZipper" instance=ExtResource("1_jx8lc")]
-damage_taken = 30
+damage_taken = 35
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 animation = &"zipper_1"
@@ -23,3 +23,6 @@ offset_left = -13.0
 offset_top = -17.0
 offset_right = 13.0
 offset_bottom = -15.0
+
+[node name="Sound" parent="." index="6"]
+volume_db = -12.0

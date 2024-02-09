@@ -59,5 +59,6 @@ autoplay = "default"
 script = ExtResource("2_yfmx6")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
+volume_db = -15.0
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

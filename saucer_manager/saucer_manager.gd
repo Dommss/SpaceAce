@@ -2,8 +2,8 @@ extends Node2D
 
 var saucer_scene: PackedScene = preload("res://enemies/saucer.tscn")
 
-const WAIT_TIME: float = 8.0
-const WAIT_VAR: float = 1.0
+const WAIT_TIME: float = 15.0
+const WAIT_VAR: float = 3.0
 
 @onready var timer = $Timer
 @onready var paths = $Paths.get_children()
