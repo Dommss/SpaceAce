@@ -1,5 +1,7 @@
 extends PathFollow2D
 
+var missile_scene: PackedScene = preload("res://homing_missile/homing_missile.tscn")
+
 @onready var state_machine = $AnimationTree["parameters/playback"]
 
 const SPEED: float = 0.08
@@ -29,3 +31,8 @@ func try_shoot() -> void:
 
 func set_shooting(v: bool) -> void:
 	_shooting = v
+
+func shoot() -> void:
+	var missile = missile_scene.instantiate()
+	get_tree().root.add_child(missile)
+	missile.global_position = global_position
