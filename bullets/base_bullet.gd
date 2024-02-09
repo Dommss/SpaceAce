@@ -26,6 +26,9 @@ func blow_up(area: Node2D) -> void:
 		ObjectMaker.create_explosion(net_position, area)
 	set_process(false)
 	queue_free()
+	
+func get_damage() -> int:
+	return damage
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():

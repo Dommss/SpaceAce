@@ -70,4 +70,11 @@ func on_powerup_hit(power_up: GameData.POWERUP_TYPE) -> void:
 		shield.enable_shield()
 
 func _on_area_entered(area):
-	pass # Replace with function body.
+	if area.is_in_group(GameData.GROUP_ENEMY_SHIP):
+		SignalManager.on_player_hit.emit(GameData.COLLISION_DAMAGE)
+	elif area.is_in_group(GameData.GROUP_SAUCER):
+		SignalManager.on_player_hit.emit(GameData.COLLISION_DAMAGE)
+	elif area.is_in_group(GameData.GROUP_HOMING_MISSILE):
+		SignalManager.on_player_hit.emit(GameData.MISSILE_DAMAGE)
+	elif area.is_in_group(GameData.GROUP_BULLET):
+		SignalManager.on_player_hit.emit(area.get_damage())
