@@ -21,3 +21,7 @@ res://health_bar/health_bar.tscn
 res://health_bar/health_bar.gd
 res://homing_missile/homing_missile.tscn
 res://homing_missile/homing_missile.gd
+res://saucer_manager/saucer_manager.tscn
+res://enemies/saucer.tscn
+res://saucer_manager/saucer_manager.gd
+res://enemies/saucer.gd

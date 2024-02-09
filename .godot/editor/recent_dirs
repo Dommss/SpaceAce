@@ -1,10 +1,11 @@
+res://enemies
+res://saucer_manager
 res://homing_missile
 res://health_bar
 res://power_up
 res://bullets
 res://assets/lasers
 res://wave_manager
-res://enemies
 res://assets/ships
 res://assets/misc
 res://boom
