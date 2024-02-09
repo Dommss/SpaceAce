@@ -2,3 +2,14 @@ res://game_ui/game_ui.tscn
 res://level/level.tscn
 res://singletons/signal_manager.gd
 res://game_ui/game_ui.gd
+res://singletons/score_manager.gd
+res://enemies/enemy_basic.tscn
+res://enemies/enemy_basic.gd
+res://enemies/enemy_zipper.tscn
+res://enemies/enemy_bomber.tscn
+res://enemies/enemy_bio.tscn
+res://enemies/saucer.tscn
+res://enemies/saucer.gd
+res://homing_missile/homing_missile.tscn
+res://homing_missile/homing_missile.gd
+res://level/level.gd

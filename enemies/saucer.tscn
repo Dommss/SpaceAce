@@ -8,23 +8,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_gqege"]
 radius = 37.0
 
-[sub_resource type="Animation" id="Animation_rxv5q"]
-resource_name = "spin"
-length = 6.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
 [sub_resource type="Animation" id="Animation_hceyw"]
 length = 0.001
 tracks/0/type = "value"
@@ -76,6 +59,42 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_hljjk"]
+resource_name = "death"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.811765, 0, 0.494118, 1), Color(0.811765, 0, 0.494118, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [false],
+"method": &"set_process"
+}, {
+"args": [],
+"method": &"make_booms"
+}, {
+"args": [],
+"method": &"die"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_w5xla"]
 resource_name = "shoot"
 length = 2.6
@@ -125,40 +144,21 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_hljjk"]
-resource_name = "death"
-length = 1.4
+[sub_resource type="Animation" id="Animation_rxv5q"]
+resource_name = "spin"
+length = 6.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/Sprite2D:modulate")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Area2D/Sprite2D:rotation")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
+"times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.811765, 0, 0.494118, 1), Color(0.811765, 0, 0.494118, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [false],
-"method": &"set_process"
-}, {
-"args": [],
-"method": &"make_booms"
-}, {
-"args": [],
-"method": &"die"
-}]
+"values": [0.0, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vh28o"]

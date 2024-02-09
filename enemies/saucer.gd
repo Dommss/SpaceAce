@@ -6,11 +6,12 @@ var missile_scene: PackedScene = preload("res://homing_missile/homing_missile.ts
 @onready var health_bar = $HealthBar
 @onready var booms = $Booms
 
-const SPEED: float = 0.08
+const SPEED: float = 0.04
 const SHOOT_PROGRESS: float = 0.02
 const FIRE_OFFSETS = [0.25, 0.5, 0.75]
 const BOOM_DELAY: float = 0.15
-const HIT_DAMAGE: int = 40
+const HIT_DAMAGE: int = 5
+const SCORE: int = 150
 
 var _shooting: bool = false
 var _shots_fired: int = 0
@@ -42,6 +43,7 @@ func shoot() -> void:
 	missile.global_position = global_position
 
 func die() -> void:
+	ScoreManager.increment_score(SCORE)
 	queue_free()
 
 func make_booms() -> void:
