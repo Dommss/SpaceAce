@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4meyeqs73qss"]
+[gd_scene load_steps=17 format=3 uid="uid://b4meyeqs73qss"]
 
 [ext_resource type="Script" path="res://enemies/saucer.gd" id="1_bv78o"]
 [ext_resource type="Texture2D" uid="uid://bek04tw5xrlr2" path="res://assets/ships/saucer_2.png" id="1_v5lgg"]
 [ext_resource type="AudioStream" uid="uid://gd61wmgx1e02" path="res://assets/sounds/misc/sci-fi-door.wav" id="3_1jcxj"]
+[ext_resource type="PackedScene" uid="uid://drsrjs5xii8i" path="res://health_bar/health_bar.tscn" id="4_nt2pa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gqege"]
 radius = 37.0
@@ -62,6 +63,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D/Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_w5xla"]
 resource_name = "shoot"
@@ -112,12 +125,52 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_hljjk"]
+resource_name = "death"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.811765, 0, 0.494118, 1), Color(0.811765, 0, 0.494118, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [false],
+"method": &"set_process"
+}, {
+"args": [],
+"method": &"make_booms"
+}, {
+"args": [],
+"method": &"die"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vh28o"]
 _data = {
 "RESET": SubResource("Animation_hceyw"),
+"death": SubResource("Animation_hljjk"),
 "shoot": SubResource("Animation_w5xla"),
 "spin": SubResource("Animation_rxv5q")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rbiqh"]
+animation = &"death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5t2tg"]
 animation = &"shoot"
@@ -133,6 +186,8 @@ switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_dvehw"]
+states/death/node = SubResource("AnimationNodeAnimation_rbiqh")
+states/death/position = Vector2(697.5, 98.9637)
 states/shoot/node = SubResource("AnimationNodeAnimation_5t2tg")
 states/shoot/position = Vector2(504, 100.312)
 states/spin/node = SubResource("AnimationNodeAnimation_v7rtw")
@@ -187,3 +242,12 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_dvehw")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="HealthBar" parent="." instance=ExtResource("4_nt2pa")]
+offset_left = -30.0
+offset_top = -44.0
+offset_right = 30.0
+offset_bottom = -41.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="died" from="HealthBar" to="." method="_on_health_bar_died"]
