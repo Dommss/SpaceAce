@@ -1,9 +1,10 @@
+Timer
+Camera2D
 Label
 HBoxContainer
 MarginContainer
 CanvasLayer
 ColorRect
-Timer
 AnimationPlayer
 AudioStreamPlayer2D
 Sprite2D
@@ -11,5 +12,3 @@ CollisionShape2D
 Area2D
 AnimationTree
 Marker2D
-Node2D
-PathFollow2D

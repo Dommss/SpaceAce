@@ -68,7 +68,7 @@ _data = {
 collision_mask = 10
 script = ExtResource("1_myhue")
 bullet_scene = ExtResource("2_f2c63")
-shooting_delay = 0.35
+shooting_delay = 0.23
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_d4hsf")
