@@ -8,6 +8,7 @@ extends PathFollow2D
 @export var bullet_direction: Vector2 = Vector2.DOWN
 @export var bullet_wait_time: float = 3.0
 @export var bullet_wait_time_var: float = 0.05
+@export var power_up_chance: float = 0.7
 
 @export var kill_me_score: int = 10
 @export var damage_taken: int = 10
@@ -61,11 +62,16 @@ func make_booms() -> void:
 	for b in booms.get_children():
 		ObjectMaker.create_boom(b.global_position)
 
+func create_powerup() -> void:
+	if randf() < power_up_chance:
+		ObjectMaker.create_random_power_up(global_position)
+
 func die() -> void:
 	if dead:
 		return
 	dead = true
 	
+	create_powerup()
 	set_process(false)
 	make_booms()
 	ScoreManager.increment_score(kill_me_score)

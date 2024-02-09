@@ -9,11 +9,16 @@ const SIMPLE_SCENES = {
 
 const POWER_UP_SCENE: PackedScene = preload("res://power_up/power_up.tscn")
 
+func get_random_powerup():
+	return GameData.POWER_UPS.keys().pick_random()
+
 func add_child_deferred(child_to_add, parent: Node2D) -> void:
-	parent.add_child(child_to_add)
+	if is_instance_valid(parent):
+		parent.add_child(child_to_add)
 	
 func call_add_child(child_to_add, parent: Node2D) -> void:
-	call_deferred("add_child_deferred", child_to_add, parent)
+	if is_instance_valid(parent):
+		call_deferred("add_child_deferred", child_to_add, parent)
 
 func create_simple_scene(start_pos: Vector2, key: SCENE_KEY, parent: Node2D) -> void:
 	var new_exp = SIMPLE_SCENES[key].instantiate()
@@ -31,3 +36,6 @@ func create_power_up(start_pos: Vector2, pu_type: GameData.POWERUP_TYPE) -> void
 	pu.global_position = start_pos
 	pu.set_power_up_type(pu_type)
 	call_add_child(pu, get_tree().current_scene)
+
+func create_random_power_up(start_pos: Vector2) -> void:
+	create_power_up(start_pos, get_random_powerup())

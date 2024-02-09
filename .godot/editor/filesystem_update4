@@ -18,3 +18,5 @@ res://shake_cam/shake_cam.gd
 res://player/player.tscn
 res://player/player.gd
 res://singletons/game_manager.gd
+res://singletons/object_maker.gd
+res://wave_manager/wave_manager.gd
