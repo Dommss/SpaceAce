@@ -28,3 +28,4 @@ res://enemies/saucer.gd
 res://bullets/base_bullet.tscn
 res://singletons/game_data.gd
 res://shield/shield.tscn
+res://shield/shield.gd
