@@ -20,3 +20,7 @@ res://player/player.gd
 res://singletons/game_manager.gd
 res://singletons/object_maker.gd
 res://wave_manager/wave_manager.gd
+res://game_over/game_over.tscn
+res://main/main.tscn
+res://main/main.gd
+res://game_over/game_over.gd

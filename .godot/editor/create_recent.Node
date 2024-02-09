@@ -1,14 +1,14 @@
 Timer
-Camera2D
 Label
+VBoxContainer
+ColorRect
+Camera2D
 HBoxContainer
 MarginContainer
 CanvasLayer
-ColorRect
 AnimationPlayer
 AudioStreamPlayer2D
 Sprite2D
 CollisionShape2D
 Area2D
 AnimationTree
-Marker2D

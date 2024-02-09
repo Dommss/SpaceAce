@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2afk7kwtmscr"]
+
+[ext_resource type="Script" path="res://game_over/game_over.gd" id="1_1pr4a"]
+[ext_resource type="LabelSettings" uid="uid://bwk7w6o70usaj" path="res://assets/lg_title.tres" id="1_teca4"]
+[ext_resource type="LabelSettings" uid="uid://c7fu3j0rsam5p" path="res://assets/gm_32_white.tres" id="2_mykm8"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1pr4a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.298039, 0.211765, 0.619608, 0.34902)
+
+[node name="VB" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.5
+offset_top = -36.5
+offset_right = 180.5
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VB"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = ExtResource("1_teca4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="VB"]
+layout_mode = 2
+text = "Score: 10000 (High: 10000)"
+label_settings = ExtResource("2_mykm8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

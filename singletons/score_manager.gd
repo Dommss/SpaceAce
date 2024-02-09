@@ -3,6 +3,12 @@ extends Node
 var _score: int = 0
 var _high_score: int = 0
 
+func get_score() -> int:
+	return _score
+
+func get_high_score() -> int:
+	return _high_score
+
 func increment_score(v: int) -> void:
 	_score += v
 	if _high_score < _score:

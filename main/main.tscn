@@ -1,22 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://rbwayv2emc6"]
+[gd_scene load_steps=11 format=3 uid="uid://rbwayv2emc6"]
 
 [ext_resource type="Texture2D" uid="uid://crxxs7hffe4kc" path="res://assets/backgrounds/GalaxyUno.png" id="1_08m7q"]
 [ext_resource type="Script" path="res://main/main.gd" id="1_tic0u"]
 [ext_resource type="Texture2D" uid="uid://bmjmpwdhi862y" path="res://assets/backgrounds/spr_stars01.png" id="2_cm4cq"]
 [ext_resource type="Texture2D" uid="uid://b68jvmcb8o8d3" path="res://assets/backgrounds/spr_stars02.png" id="3_4gwwx"]
-[ext_resource type="FontFile" uid="uid://dj82vxk1m875e" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="4_n7gnf"]
+[ext_resource type="LabelSettings" uid="uid://bwk7w6o70usaj" path="res://assets/lg_title.tres" id="5_ms8di"]
 [ext_resource type="Texture2D" uid="uid://bpan1w7ni7dbp" path="res://assets/ui/blue_button00.png" id="5_xn5qv"]
 [ext_resource type="Texture2D" uid="uid://b5nvyqgt2etnt" path="res://assets/ui/yellow_button00.png" id="6_vj5pv"]
 [ext_resource type="Texture2D" uid="uid://87dwm7csmb1v" path="res://assets/ui/green_button00.png" id="7_apqgp"]
 [ext_resource type="LabelSettings" uid="uid://c7fu3j0rsam5p" path="res://assets/gm_32_white.tres" id="8_xyp68"]
 [ext_resource type="PackedScene" uid="uid://cvs0rdjbvrkul" path="res://sun/sun.tscn" id="9_8vgg7"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_1v38k"]
-font = ExtResource("4_n7gnf")
-font_size = 72
-font_color = Color(0.945098, 0.458824, 0.172549, 1)
-outline_size = 12
-outline_color = Color(0.192157, 0, 0.937255, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_tic0u")
@@ -64,7 +57,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "SPACE ACE
 (ish)"
-label_settings = SubResource("LabelSettings_1v38k")
+label_settings = ExtResource("5_ms8di")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -114,3 +107,4 @@ vertical_alignment = 1
 offset = Vector2(24, 24)
 
 [connection signal="pressed" from="CanvasLayer/MC/VB/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MC/VB/ExitButton" to="." method="_on_exit_button_pressed"]

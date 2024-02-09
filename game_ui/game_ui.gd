@@ -19,4 +19,3 @@ func on_score_updated(v: int) -> void:
 
 func _on_health_bar_died():
 	SignalManager.on_player_died.emit()
-	GameManager.load_main_scene()
