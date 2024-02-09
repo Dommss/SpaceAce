@@ -27,3 +27,4 @@ res://saucer_manager/saucer_manager.gd
 res://enemies/saucer.gd
 res://bullets/base_bullet.tscn
 res://singletons/game_data.gd
+res://shield/shield.tscn
