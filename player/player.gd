@@ -24,7 +24,6 @@ func _ready():
 	SignalManager.on_powerup_hit.connect(on_powerup_hit)
 	
 func _process(delta):
-	print(shoot_timer.time_left)
 	var input = get_input()
 	
 	global_position += input * delta * speed
