@@ -54,7 +54,7 @@ func shoot() -> void:
 	var b = bullet_scene.instantiate()
 	update_bullet_direction()
 	b.setup(global_position, bullet_direction, bullet_speed, bullet_damage)
-	get_tree().root.add_child(b)
+	get_tree().current_scene.add_child(b)
 	start_shoot_timer()
 
 func make_booms() -> void:

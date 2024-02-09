@@ -62,7 +62,7 @@ func shoot() -> void:
 		shoot_timer.start()
 		var bullet = bullet_scene.instantiate()
 		bullet.setup(global_position, bullet_direction, bullet_speed, bullet_damage)
-		get_tree().root.add_child(bullet)
+		get_tree().current_scene.add_child(bullet)
 
 func on_powerup_hit(power_up: GameData.POWERUP_TYPE) -> void:
 	print("powerup: ", power_up)

@@ -13,6 +13,9 @@ script = ExtResource("1_bx4l2")
 
 [node name="LevelBg" parent="." instance=ExtResource("2_otm02")]
 
+[node name="ShakeCam" parent="." instance=ExtResource("7_mo1u5")]
+anchor_mode = 0
+
 [node name="WaveManager" parent="." instance=ExtResource("7_ok17a")]
 
 [node name="SaucerManager" parent="." instance=ExtResource("4_tpntb")]
@@ -23,6 +26,3 @@ position = Vector2(322, 381)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("6_fprtv")]
-
-[node name="ShakeCam" parent="." instance=ExtResource("7_mo1u5")]
-anchor_mode = 0

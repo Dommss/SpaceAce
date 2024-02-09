@@ -17,3 +17,4 @@ res://shake_cam/shake_cam.tscn
 res://shake_cam/shake_cam.gd
 res://player/player.tscn
 res://player/player.gd
+res://singletons/game_manager.gd
