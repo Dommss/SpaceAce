@@ -1,3 +1,5 @@
+AnimationTree
+AudioStreamPlayer2D
 AnimationPlayer
 Marker2D
 Node2D
@@ -9,6 +11,5 @@ Path2D
 Timer
 CPUParticles2D
 TextureProgressBar
-AudioStreamPlayer2D
 VisibleOnScreenNotifier2D
 AnimatedSprite2D

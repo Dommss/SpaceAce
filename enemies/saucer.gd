@@ -1,9 +1,31 @@
 extends PathFollow2D
 
-const SPEED: float = 0.05
+@onready var state_machine = $AnimationTree["parameters/playback"]
+
+const SPEED: float = 0.08
+const SHOOT_PROGRESS: float = 0.02
+const FIRE_OFFSETS = [0.25, 0.5, 0.75]
+
+var _shooting: bool = false
+var _shots_fired: int = 0
 
 func _ready():
 	progress_ratio = 0.0
 
 func _process(delta):
-	progress_ratio += SPEED * delta
+	if !_shooting:
+		progress_ratio += SPEED * delta
+		try_shoot()
+
+func update_shots_fired() -> void:
+	_shots_fired += 1
+	if _shots_fired >= len(FIRE_OFFSETS):
+		_shots_fired = 0
+
+func try_shoot() -> void:
+	if abs(progress_ratio - FIRE_OFFSETS[_shots_fired]) < SHOOT_PROGRESS:
+		state_machine.travel("shoot")
+		update_shots_fired()
+
+func set_shooting(v: bool) -> void:
+	_shooting = v
